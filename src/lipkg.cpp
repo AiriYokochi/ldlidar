@@ -219,8 +219,8 @@ void LiPkg::ToLaserscan(std::vector<PointData> src)
   /*Adjust the parameters according to the demand*/
   angle_min = 0 ;
   angle_max =  3.14159*2;
-  range_min = 0.5;
-  range_max = 15000;
+  range_min = 0.0005;
+  range_max = 15;
   /*Angle resolution, the smaller the resolution, the smaller the error after conversion*/
   angle_increment = ANGLE_TO_RADIAN(mSpeed/4500);
   /*Calculate the number of scanning points*/
@@ -241,7 +241,7 @@ void LiPkg::ToLaserscan(std::vector<PointData> src)
 
   for (auto point : src)
   {
-	float range = point.distance ;
+	float range = point.distance*0.001 ;
     float angle = ANGLE_TO_RADIAN(point.angle);
 	
     int index = (int)((angle - output.angle_min) / output.angle_increment);
