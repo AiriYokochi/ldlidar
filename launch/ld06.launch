@@ -1,0 +1,7 @@
+<launch>
+
+ <node name="LD06" pkg="ldlidar" type="ldlidar" args="LD06" output="screen" />
+
+ <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ldlidar)/ldlidar.rviz"/>
+
+</launch>
