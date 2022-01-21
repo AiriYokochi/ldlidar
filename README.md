@@ -1,3 +1,10 @@
+## 依存関係
+
+[TODO] 自動化
+```
+sudo apt install libudev-dev
+```
+
 ## コンパイル
 
 catkinでコンパイルする場合は、次のようにします。
