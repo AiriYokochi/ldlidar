@@ -10,7 +10,7 @@ sudo apt install libudev-dev
 catkinでコンパイルする場合は、次のようにします。
 
 ```sh
-catkin_make
+catkin build
 
 ```
 
