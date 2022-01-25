@@ -44,7 +44,7 @@ int main(int argc , char **argv)
 	if(cmd_port.Open(port_name))
 		std::cout<<"LiDAR_LD06 started successfully "  <<std::endl;
 	
-	ros::Publisher lidar_pub = nh.advertise<sensor_msgs::LaserScan>("LiDAR/LD06", 1); /*create a ROS topic */
+	ros::Publisher lidar_pub = nh.advertise<sensor_msgs::LaserScan>("lidar/ld06", 1); /*create a ROS topic */
 	
 	while (ros::ok())
 	{
