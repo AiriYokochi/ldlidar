@@ -21,7 +21,7 @@ catkin build
 sudo cp 99-lidar-ld06.rules /etc/udev/rules.d/
 sudo service udev reload
 ```
-その後、一度USBを指し直してください。
+その後、一度USBを差し直してください。
 
 
 99-lidar-ld06.rules
