@@ -16,24 +16,8 @@ int main(int argc , char **argv)
 	LiPkg * lidar = new LiPkg;
   
     CmdInterfaceLinux cmd_port;
-    std::vector<std::pair<std::string, std::string> > device_list;
-    std::string port_name;
-    cmd_port.GetCmdDevices(device_list);
-    for (auto n : device_list)
-    {
-        std::cout << n.first << "    " << n.second << std::endl;
-        if(strstr(n.second.c_str(),"CP2102"))
-        {
-            port_name = n.first;
-        }
-    }
+    std::string port_name="/dev/ttyLD06";
 
-	if(port_name.empty())
-	{
-		std::cout<<"Can't find LiDAR LD06"<< std::endl;
-	}
-
-	std::cout<<"FOUND LiDAR_LD06"  <<std::endl;
 	cmd_port.SetReadCallback([&lidar](const char *byte, size_t len) {
 		if(lidar->Parse((uint8_t*)byte, len))
 		{
